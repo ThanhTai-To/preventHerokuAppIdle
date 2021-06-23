@@ -13,8 +13,13 @@ const data = JSON.stringify({
   password: '12345678'
 })
 var xhr = new XMLHttpRequest()
+var xhr2 = new XMLHttpRequest();
 
 function preventHerokuIdle () {
+
+	xhr2.open('GET', 'https://prevent-heroku-app-idle.herokuapp.com/', true);
+	xhr2.send();
+
 	xhr.open('POST', domain_name + login_path , true);
 	//xhr.withCredentials = true;
 	xhr.setRequestHeader('Content-Type', 'application/json');
